@@ -17,7 +17,6 @@ An interactive software tool for visualizing retroactive data structures—speci
   - [Challenges Faced and Solutions](#challenges-faced-and-solutions)
   - [Future Extensions](#future-extensions)
   - [Installation](#installation)
-- [License](#license)
 
 ---
 
@@ -162,12 +161,8 @@ The purpose of this project is to bridge the gap between theoretical concepts of
     git clone <repository-url>
 
 2. Navigate to the project folder:
-    cd <project-folder>
+    cd "project-folder"
 
 3. Install dependencies (if needed):
     pip install matplotlib
     pip install tkinter
-
-## License
-
-[Include your license here, e.g., MIT License]
