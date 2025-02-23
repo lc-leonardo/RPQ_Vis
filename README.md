@@ -16,6 +16,7 @@ An interactive software tool for visualizing retroactive data structures—speci
   - [Design Decisions](#design-decisions)
   - [Challenges Faced and Solutions](#challenges-faced-and-solutions)
   - [Future Extensions](#future-extensions)
+  - [Installation](#installation)
 - [License](#license)
 
 ---
