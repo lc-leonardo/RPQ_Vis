@@ -7,9 +7,9 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import math
 import re
 
-# ========================
+
 # AVL Tree (for retroactive PQ)
-# ========================
+
 class Node:
     def __init__(self, key, timestamp):
         self.key = key
@@ -106,9 +106,9 @@ class AVLTree:
             self.inorder_traversal(current.right, result)
         return result
 
-# ========================
+
 # Augmented Tree Node (for Augmented BBST view)
-# ========================
+
 class AugTreeNode:
     def __init__(self, event=None):
         self.event = event  # (time_added, key, time_deleted)
@@ -116,9 +116,9 @@ class AugTreeNode:
         self.right = None
         self.aug = float('-inf')  # Augmented value
 
-# ========================
+
 # Update Tree Node (for the Updates BBST view)
-# ========================
+
 class UpdateNode:
     def __init__(self, event=None):
         self.event = event  # (timestamp, type, value)
@@ -127,9 +127,9 @@ class UpdateNode:
         self.val = 0      # Update value
         self.sum = 0      # Subtree sum
 
-# ========================
+
 # Retroactive Priority Queue & Visualization
-# ========================
+
 class RetroactivePriorityQueue:
     def __init__(self, root):
         self.events = []         # (timestamp, type, value)
