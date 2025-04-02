@@ -25,7 +25,7 @@ An interactive software tool for visualizing retroactive data structures—speci
 This project implements an interactive visualization tool for retroactive data structures. The software supports both a graphical user interface (GUI) and a command-line prompt mode. Key functionalities include:
 
 - Visualizing a retroactive priority queue using an AVL tree.
-- Displaying augmented binary search trees (BBST) that capture historical operations of the **Augmented BBST**, showing the insertion events with the format `[time added, key, time deleted]`, And **Updates BBST** that racks every update (insertion and delete‑min) along with update values and subtree sums.
+- Displaying augmented binary search trees (BBST) that capture historical operations of the **Augmented BBST**, showing the insertion events with the format `[time added, key, time deleted]`, and **Updates BBST** that racks every update (insertion and delete‑min) along with update values and subtree sums.
 - Allowing retroactive modifications by letting users insert operations with a past timestamp.
 - Real-time re‑evaluation and display of the internal state (events, active queue, and plot data).
 
