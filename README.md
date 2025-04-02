@@ -35,7 +35,7 @@ This project implements an interactive visualization tool for retroactive data s
 
 ### Installation
 
-1. Clone the repository:
+1. Download the file RPQ_Vis.py or Clone the repository:
     git clone <repository-url>
 
 2. Navigate to the project folder:
