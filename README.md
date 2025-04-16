@@ -8,6 +8,7 @@ An interactive software tool for visualizing retroactive data structures—speci
 
 - [Overview](#overview)
 - [How to Use the Software](#how-to-use-the-software)
+  - [Installation](#installation)
   - [Graphic Mode](#graphic-mode)
   - [Prompt Mode](#prompt-mode)
 - [Design Document](#design-document)
@@ -16,7 +17,6 @@ An interactive software tool for visualizing retroactive data structures—speci
   - [Design Decisions](#design-decisions)
   - [Challenges Faced and Solutions](#challenges-faced-and-solutions)
   - [Future Extensions](#future-extensions)
-  - [Installation](#installation)
 
 ---
 
@@ -25,15 +25,25 @@ An interactive software tool for visualizing retroactive data structures—speci
 This project implements an interactive visualization tool for retroactive data structures. The software supports both a graphical user interface (GUI) and a command-line prompt mode. Key functionalities include:
 
 - Visualizing a retroactive priority queue using an AVL tree.
-- Displaying augmented binary search trees (BBST) that capture historical operations:
-  - **Augmented BBST:** Shows insertion events with the format `[time added, key, time deleted]`.
-  - **Updates BBST:** Tracks every update (insertion and delete‑min) along with update values and subtree sums.
+- Displaying augmented binary search trees (BBST) that capture historical operations of the **Augmented BBST**, showing the insertion events with the format `[time added, key, time deleted]`, and **Updates BBST** that racks every update (insertion and delete‑min) along with update values and subtree sums.
 - Allowing retroactive modifications by letting users insert operations with a past timestamp.
 - Real-time re‑evaluation and display of the internal state (events, active queue, and plot data).
 
 ---
 
 ## How to Use the Software
+
+### Installation
+
+1. Download the file RPQ_Vis.py or Clone the repository:
+    git clone <repository-url>
+
+2. Navigate to the project folder:
+    cd "project-folder"
+
+3. Install dependencies (if needed):
+    pip install matplotlib
+    pip install tkinter
 
 ### Graphic Mode
 
@@ -103,66 +113,32 @@ This project implements an interactive visualization tool for retroactive data s
 
 ### Project Motivation and Objectives
 
-The purpose of this project is to bridge the gap between theoretical concepts of retroactive data structures and practical, visual understanding. Many students struggle with abstract data structure theories, and our interactive tool aims to provide clarity by showing real-time effects of retroactive operations. This project is both an educational aid for students and an implementation project that demonstrates how theoretical ideas can be transformed into an interactive software tool.
+This project was created to connect abstract retroactive data structure principles with tangible visual illustrations. An interactive tool that can cease student difficulties with abstract data structure theories through visual demonstrations of retroactive operations in real time. This project works simultaneously to deliver educational assistance to students and exhibit theoretical transformations into interactive software through implementation.
 
 ### Key Features
 
-- **Dual Mode Operation:**
-  - **Graphic Mode:** An interactive GUI built with Tkinter and Matplotlib.
-  - **Prompt Mode:** A command-line interface for entering and testing operations.
-- **Retroactive Operations:**
-  - Supports inserting operations with past timestamps, thereby retroactively modifying the state.
-- **Augmented Visualizations:**
-  - Displays multiple tree views to illustrate different aspects of retroactive operations:
-    - **PQ Tree (AVL)**
-    - **Augmented BBST:** Displays insertion events in the format `(time added, key, time deleted)`.
-    - **Updates BBST:** Tracks update operations with update values and subtree sums.
-- **Interactive Editing:**
-  - Users can add, delete, edit, and query operations in real time, with changes immediately reflected in the visualization.
-- **Educational Impact:**
-  - Provides a tangible, interactive method to help students understand complex retroactive operations and the behavior of dynamic data structures.
+- Having a **Dual Mode Operation** with a **Graphic Mode** that is an interactive GUI built with Tkinter and Matplotlib. And a **Prompt Mode** with a command-line interface for entering and testing operations.
+- **Retroactive Operations** simulations that support inserting operations with past timestamps, thereby retroactively modifying the state.
+- **Augmented Visualizations** while displays multiple tree views to illustrate different aspects of retroactive operations from **PQ Tree (AVL)**, **Augmented BBST** displaying insertion events in the format `(time added, key, time deleted)`, and **Updates BBST** tracking update operations with update values and subtree sums.
+- **Interactive Editing** enabling users to perform add, delete, edit, and query operations in real time, with changes immediately reflected in the visualization.
+- **Educational Impact** providing a tangible, interactive method to help students understand complex retroactive operations and the behavior of dynamic data structures.
 
 ### Design Decisions
 
-- **Programming Language and Libraries:**
-  - Python was chosen for its ease of use and the availability of robust libraries like Tkinter and Matplotlib.
-- **Data Structures:**
-  - An AVL tree is used to implement the priority queue due to its efficient balancing properties.
-  - Augmented BSTs are implemented to track historical changes and updates.
-- **User Interface:**
-  - The GUI is divided into logical panels: a top panel for the plot, a left panel for the event log and controls, and a right panel for tree visualizations.
-  - A separate navigation area allows users to switch between different tree views.
-- **Event Ordering:**
-  - Events are stored in a list and re-sorted by timestamp upon re-evaluation to handle retroactive operations consistently.
+- The **Programming Language and Libraries** chosen were Python due to its ease of use and the availability of robust libraries like Tkinter and Matplotlib.
+- **Data Structures** selected were AVL tree to implement the priority queue due to its efficient balancing properties and the augmented BSTs to track historical changes and updates.
+- About the **User Interface**, the GUI is divided into logical panels: a top panel for the plot, a left panel for the event log and controls, and a right panel for tree visualizations, and a separate navigation area allows users to switch between different tree views.
+- The **Event Ordering** is based on the events stored in a list and re-sorted by timestamp upon re-evaluation to handle retroactive operations consistently.
 
 ### Challenges Faced and Solutions
 
-- **Handling Retroactive Operations:**
-  - Retroactive commands needed to replace previous events with the same timestamp. This was achieved by checking for existing events and removing them before appending new ones.
-- **Visualization Layout:**
-  - Centering the tree visualization and aligning navigation controls required careful use of Tkinter layout managers and separate frames.
-- **Maintaining State Consistency:**
-  - Keeping the event log, active queue, and plot data in sync was challenging. Regular re-sorting and re-evaluation of events ensured consistency.
+- When **Handling Retroactive Operations** the retroactive commands needed to replace previous events with the same timestamp. This was achieved by checking for existing events and removing them before appending new ones.
+- For the **Visualization Layout**, centering the tree visualization and aligning navigation controls required careful use of Tkinter layout managers and separate frames.
+- To keep the **Maintaining State Consistency**, keeping the event log, active queue, and plot data in sync was challenging. Regular re-sorting and re-evaluation of events ensured consistency.
 
 ### Future Extensions
 
-- **Additional Data Structures:**
-  - Extend the tool to visualize other retroactive data structures (e.g., retroactive stacks or queues).
-- **Enhanced Interactivity:**
-  - Add detailed on-screen annotations and tooltips to further explain changes in the data structure.
-- **Web-Based Version:**
-  - Develop a web interface to make the tool accessible to a wider audience.
-- **Customization Options:**
-  - Allow users to customize appearance settings such as colors, fonts, and layouts.
-
-### Installation
-
-1. Clone the repository:
-    git clone <repository-url>
-
-2. Navigate to the project folder:
-    cd "project-folder"
-
-3. Install dependencies (if needed):
-    pip install matplotlib
-    pip install tkinter
+- Implement **Additional Data Structures** extending the tool to visualize other retroactive data structures (e.g., retroactive stacks or queues).
+- **Enhance Interactivity** adding detailed on-screen annotations and tooltips to further explain changes in the data structure.
+- Try a **Web-Based Version** developing a web interface to make the tool accessible to a wider audience.
+- Add **Customization Options** allowing users to customize appearance settings such as colors, fonts, and layouts.
