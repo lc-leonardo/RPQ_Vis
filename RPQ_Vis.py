@@ -155,6 +155,10 @@ class RetroactivePriorityQueue:
                 return 1
         elif etype == "delete-min":
             return -1
+        else:
+            # For any other event type (like "query"), return 0.
+            return 0
+
 
     def __init_gui(self, root):
         root.title("Retroactive Priority Queue Visualization")
